@@ -1,0 +1,59 @@
+<div class="cart-page">
+
+  <!-- LEFT -->
+  <div class="cart-left">
+    <h2>My Cart</h2>
+
+    <div class="cart-item" *ngFor="let pizza of cart.pizzas">
+      <img [src]="pizza.image"alt='pizza'>
+
+      <div class="info">
+        <h3>
+          {{ pizza.name }}
+          <span
+            class="type"
+            [class.veg]="pizza.type === 'veg'"
+            [class.nonveg]="pizza.type === 'nonveg'">
+          </span>
+        </h3>
+        ₹{{ pizza.price }}
+      </div>
+
+      <div class="qty">
+        <button (click)="cart.decreaseQty(pizza)">−</button>
+        <span>{{ pizza.qty }}</span>
+        <button (click)="cart.increaseQty(pizza)">+</button>
+      </div>
+
+      <div class="total">
+        ₹{{ pizza.total }}
+      </div>
+
+      <button (click)="cart.removePizza(pizza.id)">🗑</button>
+    </div>
+
+    <h3>Sub Total : ₹{{ cart.getPizzaSubTotal() }}</h3>
+  </div>
+
+  <!-- RIGHT -->
+  <div class="cart-right">
+    <h3>The total amount of</h3>
+
+    <p>Pizza <span>₹{{ cart.getPizzaSubTotal() }}</span></p>
+    <p>Ingredients <span>₹{{ cart.getIngredientTotal() }}</span></p>
+
+    <h2>Total : ₹{{ cart.getGrandTotal() }}</h2>
+
+    <button class="pay" (click)="payNow()">Pay</button>
+    <button class="clear" (click)="cart.clearCart()">Clear</button>
+  </div>
+  <div class="success-overlay" *ngIf="showSuccess">
+  <div class="success-card">
+    <div class="check-icon">✓</div> <hr>
+    <h2>Order Placed!</h2>
+    <p>Your delicious pizza is on the way.</p>
+    <button (click)="closeSuccess()">Back to Home</button>
+  </div>
+</div>
+
+</div>

@@ -1,0 +1,39 @@
+<div class="pizza-container">
+  <div class="pizza-card" *ngFor="let pizza of pizzas">
+    
+    <div class="pizza-details">
+      <h3>
+        {{ pizza.name }}
+        <span class="type-indicator" [class.veg]="pizza.type === 'veg'" [class.nonveg]="pizza.type === 'nonveg'"></span>
+      </h3>
+
+      <p class="desc">{{ pizza.description }}</p>
+      <p><strong>₹{{ pizza.price }}</strong></p>
+
+      <p class="small-text">
+        <strong>Ingredients:</strong>
+        <span *ngFor="let ing of pizza.ingredients; let i = index">
+          {{ ing.iname }}<span *ngIf="i < pizza.ingredients.length - 1">, </span>
+        </span>
+      </p>
+
+      <p class="small-text">
+        <strong>Toppings:</strong>
+        <span *ngFor="let top of pizza.topping; let i = index">
+          {{ top.tname }}<span *ngIf="i < pizza.topping.length - 1">, </span>
+        </span>
+      </p>
+
+      <button *ngIf="!pizza.added" (click)="addToCart(pizza)" class="add-btn">
+        Add to Cart
+      </button>
+
+      <button *ngIf="pizza.added" (click)="removeFromCart(pizza)" class="remove-btn">
+        Remove
+      </button>
+    </div>
+
+    <img [src]="pizza.image" alt="pizza" />
+
+  </div>
+</div>

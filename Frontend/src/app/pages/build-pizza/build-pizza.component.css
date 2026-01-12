@@ -1,0 +1,79 @@
+/* Container styling to center the content */
+.build-container {
+  text-align: center;
+  padding: 20px;
+  background-color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* The instruction text at the top */
+.info {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Table styling for the ingredients list */
+table {
+  width: 500px; /* Adjust based on preference */
+  margin: 0 auto;
+  border-collapse: collapse;
+  border: 1px solid #d3d3d3;
+}
+
+td {
+  border: 1px solid #d3d3d3;
+  padding: 10px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+/* Image styling within the table */
+table img {
+  width: 60px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Item name and price font weight */
+td b {
+  font-size: 14px;
+}
+
+/* The orange "Add" text next to checkboxes */
+.add-text {
+  color: #ff9800;
+  font-size: 14px;
+  font-weight: 500;
+  margin-left: 5px;
+}
+
+/* Total Cost text styling */
+.total {
+  margin-top: 20px;
+  font-size: 20px;
+  color: #00008b; /* Dark Blue */
+  font-weight: bold;
+}
+
+/* The black and orange button at the bottom */
+.build-btn {
+  background-color: #000;
+  color: #ff9800;
+  border: 1px solid #444;
+  padding: 10px 25px;
+  font-size: 18px;
+  margin-top: 20px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.build-btn:hover {
+  background-color: #222;
+}
+
+/* Aligning the checkbox and 'Add' text */
+td:last-child {
+  white-space: nowrap;
+}

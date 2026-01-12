@@ -1,0 +1,44 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: black;
+  color: white;
+  padding: 10px 20px;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo {
+  height: 40px;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+.cart-btn {
+  background: orange;
+  padding: 6px 12px;
+  border-radius: 4px;
+  color: black;
+}
+
+.brand {
+  font-family: "Trebuchet MS", Helvetica, sans-serif; /* A classic, clean 'food' font */
+  font-size: 26px;
+  font-weight: bold;
+  color: #ffffff;
+  margin-right: 15px;
+  letter-spacing: -1px; /* Makes it look more like a custom logo */
+}
+
+/* Optional: Gives it a subtle hover effect */
+.brand:hover {
+  color: #ffc107; 
+}

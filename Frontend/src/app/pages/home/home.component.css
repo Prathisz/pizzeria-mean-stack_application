@@ -1,0 +1,66 @@
+/* Container and Typography */
+.home {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: sans-serif;
+  color: #444;
+}
+
+section {
+  padding: 40px 0;
+  border-bottom: 1px solid #eee; /* Light separators between sections */
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+/* Our Story: Fully Centered */
+.story-section {
+  text-align: center;
+}
+
+.story-section p {
+  max-width: 900px;
+  margin: 0 auto 15px;
+  line-height: 1.6;
+}
+
+.story-section img {
+  margin: 30px auto 0;
+}
+
+/* Two-Column Layout (Ingredients, Chef, Delivery) */
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.row > div, .row > img {
+  flex: 1;
+}
+
+.row img {
+  max-width: 500px;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Delivery Section specific font size */
+.delivery h2 {
+  font-weight: normal;
+  color: #555;
+}
+
+/* Footer Copyright */
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #ff9800; /* Orange color from image */
+  font-size: 0.9rem;
+}

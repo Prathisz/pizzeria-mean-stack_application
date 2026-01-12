@@ -1,0 +1,173 @@
+/* Container Layout */
+.cart-page {
+  display: flex;
+  gap: 20px;
+  padding: 40px;
+  background-color: #f8f9fa; /* Light grey background like the image */
+  font-family: Arial, sans-serif;
+  justify-content: center;
+}
+
+/* Common Card Styling */
+.cart-left, .cart-right {
+  background: white;
+  border: 1px solid #ccc;
+  padding: 0; /* Padding handled by children for full-width lines */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.cart-left { flex: 2; max-width: 800px; }
+.cart-right { flex: 1; max-width: 400px; height: fit-content; }
+
+/* Titles */
+h2, h3 {
+  margin: 0;
+  padding: 15px 20px;
+}
+
+.cart-left h2 {
+  border-bottom: 1px solid #ddd;
+  font-size: 28px;
+  color: #333;
+}
+
+/* Cart Items */
+.cart-item {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+  gap: 20px;
+}
+
+.cart-item img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+}
+
+.info { flex: 2; }
+.info h3 { padding: 0; margin-bottom: 5px; font-size: 18px; }
+
+/* Veg/Non-Veg Indicators */
+.type {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border: 2px solid;
+  margin-left: 10px;
+  position: relative;
+}
+.type::after {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+}
+.veg { border-color: green; }
+.veg::after { background: green; }
+.nonveg { border-color: red; }
+.nonveg::after { background: red; }
+
+/* Quantity Controls */
+.qty {
+  display: flex;
+  align-items: center;
+  background: #f0f0f0;
+  border-radius: 4px;
+}
+.qty button {
+  background: #7a7a7a;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 18px;
+}
+.qty span {
+  padding: 0 15px;
+  font-weight: bold;
+}
+
+.total {
+  flex: 1;
+  text-align: right;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* Right Side (Summary) */
+.cart-right p {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  margin: 0;
+}
+
+.cart-right h2 {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  border-top: 1px solid #ddd;
+  margin-top: 20px;
+}
+
+/* Action Buttons */
+.pay, .clear {
+  width: 45%;
+  margin: 10px 2.5%;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.pay { background-color: #ffc107; color: #222; } /* Yellow */
+.clear { background-color: #212529; color: white; } /* Dark Gray */
+
+/* Subtotal Align */
+.cart-left h3 {
+  text-align: right;
+  padding-right: 40px;
+}
+
+.success-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.success-card {
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.check-icon {
+  font-size: 50px;
+  color: #4CAF50;
+  margin-bottom: 10px;
+}
+
+.success-card h2 { color: #333; margin-bottom: 10px; }
+
+.success-card button {
+  background: #ffc107;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
